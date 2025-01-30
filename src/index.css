@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Mandali&family=Yantramanav:wght@300;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General Body Style */
+body {
+  font-family: "Mandali", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Header (Logo) */
+h1,
+h2,
+h3 {
+  font-family: "Lora", serif;
+}
+
+/* Header Styling */
+header {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu */
+.md:hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .md:hidden {
+    display: block;
+  }
+}
+
+nav a {
+  transition: color 0.3s, background-color 0.3s;
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 500;
+
+}
+
+@layer components {
+}
