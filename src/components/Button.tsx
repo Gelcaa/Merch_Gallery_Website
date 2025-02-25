@@ -6,7 +6,7 @@ const Button = ({ children, variant = "default", size = "md", onClick }) => {
 
   const variantStyles = {
     default:
-      "bg-transparent text-white border-white hover:bg-white hover:text-black",
+      "bg-transparent text-white border-white hover:bg-[#48773C] hover:text-white hover:border-transparent",
   };
 
   const sizedStyles = {

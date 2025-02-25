@@ -46,5 +46,34 @@ nav a {
 
 }
 
+button {
+    font-family: "Yantramanav", sans-serif;
+}
+
+
+.swiper-slide {
+  transition: transform 0.3s ease-out;
+}
+
+.swiper-slide-active {
+  transform: scale(1.1) !important;
+  opacity: 1 !important;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  color: #48773C !important;
+  /* Adjust positioning */
+}
+
+.swiper-button-next {
+  right: -60px;
+  color: #48773C !important;
+  /* Adjust positioning */
+}
+
+
 @layer components {
 }
+
+
