@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import products from "../constants/products";
 import ProductCard from "../components/ProductCard";
 import CategoryFilter from "../components/CategoryFilter";
+import ProductModal from "../components/ProductModal";
 
 const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filteredProducts =
     selectedCategory === "ALL"
@@ -43,9 +45,20 @@ const ProductPage = () => {
                      md:gap-6"
       >
         {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            onClick={() => setSelectedProduct(product)}
+          />
         ))}
       </div>
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
   );
 };

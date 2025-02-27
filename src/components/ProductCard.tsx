@@ -4,11 +4,22 @@ import { Product } from "../constants/products";
 
 type ProductCardProps = {
   product: Product;
+  onClick: () => void;
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-    <div className="aspect-square bg-gray-300 "></div>
+const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => (
+  <div
+    className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+    onClick={onClick}
+  >
+    <div className="aspect-square bg-gray-300 ">
+      {" "}
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full h-full object-cover"
+      />
+    </div>
     <div className="p-3 md:p-4">
       <h3 className="text-xs line-clamp-2 sm:text-sm md:text-base text-gray-700">
         {product.name}
