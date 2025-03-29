@@ -25,7 +25,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => (
         {product.name}
       </h3>
       <p className="text-sm font-bold mt-1 md:text-lg md:mt-2">
-        ₱{product.price.toFixed(2)}
+        {product.priceRange
+          ? `₱${product.priceRange[0]} - ₱${product.priceRange[1]}`
+          : `₱${product.price?.toFixed(2)}`}
       </p>
     </div>
   </div>

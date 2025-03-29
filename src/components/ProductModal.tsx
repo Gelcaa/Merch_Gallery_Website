@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Product } from "../constants/products";
 
 type ProductModalProps = {
@@ -7,6 +7,14 @@ type ProductModalProps = {
 };
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
+  const [selectedSize, setSelectedSize] = useState("XS-M"); // Default size
+  const price =
+    product.priceRange && selectedSize === "L-2XL"
+      ? product.priceRange[1]
+      : product.priceRange
+      ? product.priceRange[0]
+      : product.price;
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-2 sm:p-4 z-50">
       <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl mx-2 sm:mx-0">
@@ -32,9 +40,31 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
               <p className="text-gray-500 uppercase text-xs sm:text-sm">
                 {product.category}
               </p>
+
+              {product.priceRange ? (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Size
+                  </label>
+                  <select
+                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                    value={selectedSize}
+                    onChange={(e) => setSelectedSize(e.target.value)}
+                  >
+                    <option value="XS-M">
+                      XS - M (₱{product.priceRange[0]})
+                    </option>
+                    <option value="L-2XL">
+                      L - 2XL (₱{product.priceRange[1]})
+                    </option>
+                  </select>
+                </div>
+              ) : null}
+
               <p className="text-2xl sm:text-3xl font-bold text-green-700">
-                ₱{product.price.toFixed(2)}
+                ₱{price?.toFixed(2)}
               </p>
+
               <p className="text-gray-600 text-sm sm:text-base">
                 {product.description ||
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}

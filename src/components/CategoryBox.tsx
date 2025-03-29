@@ -1,9 +1,22 @@
 import React from "react";
 
-const CategoryBox = ({ imageSrc, title, className }) => {
+interface CategoryBoxProps {
+  imageSrc: string;
+  title: string;
+  className?: string;
+  onClick?: () => void;
+}
+
+const CategoryBox: React.FC<CategoryBoxProps> = ({
+  imageSrc,
+  title,
+  className,
+  onClick,
+}) => {
   return (
     <div
       className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`}
+      onClick={onClick}
     >
       <img
         src={imageSrc}
