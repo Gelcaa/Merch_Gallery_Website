@@ -48,7 +48,7 @@ const About: React.FC = () => {
           <FaFacebook />
         </a>
         <a
-          href="https://instagram.com/yourpage"
+          href="https://www.instagram.com/dlsud_cosa/?igsh=bmo2cGdmaG9jbW8x#"
           target="_blank"
           rel="noopener noreferrer"
           className="text-pink-600 text-3xl hover:text-pink-800 transition"
