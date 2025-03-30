@@ -1,40 +1,36 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CategoryBox from "./CategoryBox";
-import shirts from "../assets/images/categories/shirts.png";
-import pins from "../assets/images/categories/pins.png";
-import lanyards from "../assets/images/categories/lanyards.png";
-import cap from "../assets/images/categories/Cap.png";
-import totebag from "../assets/images/categories/totebag.png";
+import categoryImages from "../constants/categories"; // Import from constants
 
 const categories = [
   {
     id: 1,
-    imageSrc: lanyards,
+    imageSrc: categoryImages[2], // Lanyards
     title: "Lanyards",
     className: "col-span-1 row-span-1 ",
   },
   {
     id: 2,
-    imageSrc: totebag,
+    imageSrc: categoryImages[4], // Totebags
     title: "Totebags",
     className: "col-span-1 row-span-1",
   },
   {
     id: 3,
-    imageSrc: pins,
+    imageSrc: categoryImages[1], // Pins
     title: "Pins",
     className: "sm:col-span-1 col-span-2 row-span-1",
   },
   {
     id: 4,
-    imageSrc: cap,
+    imageSrc: categoryImages[3], // Cap
     title: "Cap",
     className: "col-span-1 row-span-1",
   },
   {
     id: 5,
-    imageSrc: shirts,
+    imageSrc: categoryImages[0], // T-Shirts
     title: "T-Shirts",
     className: "sm:col-span-2 col-span-1 row-span-1",
   },
@@ -46,6 +42,7 @@ const Categories: React.FC = () => {
   const handleCategoryClick = (category: string) => {
     navigate(`/products?category=${category}`); // Redirect with category as query param
   };
+
   return (
     <div className="text-center py-12 bg-[#f5f2e6]">
       <h1 className="font-lora text-black text-4xl md:text-5xl lg:text-6xl font-bold pt-8 pb-3">
