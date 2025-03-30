@@ -66,8 +66,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
               </p>
 
               <p className="text-gray-600 text-sm sm:text-base">
-                {product.description ||
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                {product.description}
               </p>
             </div>
           </div>
