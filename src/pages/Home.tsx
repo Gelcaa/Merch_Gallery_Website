@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Categories from "../components/Categories";
 import ScholarsExclusive from "../components/scholarExclusive";
 import scholarImages from "../constants/scholarImage";
+import bgCover from "../constants/bgCover";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -17,8 +18,7 @@ const Home = () => {
       <div
         className="h-screen bg-cover bg-center flex flex-col items-center justify-center bg-black bg-opacity-50"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('src/assets/images/cover.png')",
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bgCover})`,
         }}
       >
         <h1 className="font-lora text-white text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
