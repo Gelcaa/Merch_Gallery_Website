@@ -1,11 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CategoryBox from "./CategoryBox";
-import shirt from "../assets/images/categories/shirt.png";
 import shirts from "../assets/images/categories/shirts.png";
 import pins from "../assets/images/categories/pins.png";
 import lanyards from "../assets/images/categories/lanyards.png";
-import cap from "../assets/images/categories/cap.png";
+import cap from "../assets/images/categories/Cap.png";
 import totebag from "../assets/images/categories/totebag.png";
 
 const categories = [
